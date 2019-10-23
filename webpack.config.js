@@ -1,16 +1,12 @@
 const path = require('path');
 
 
-function getEntry() {
-  return {
-    home: ''
-  }
-}
-
 
 
 module.exports = {
-  entry: getEntry(),
+  entry: {
+    app: './src/index.js'
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -19,10 +15,13 @@ module.exports = {
     port: '8080',
     hot: true
   },
+  resolve:{
+    extensions: ['.js', '.json', '.jsx']
+  },
   module: {
     rules: [
       {
-        test: /\.tsx/,
+        test: /\.jsx?$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -31,7 +30,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
