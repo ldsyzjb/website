@@ -1,5 +1,11 @@
+
 import ReactDom from 'react-dom';
-import Home from './pages/home';
+import Main from './router';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 
-ReactDom.render(Home, document.getElementById('root'));
+
+
+ReactDom.render(Main, document.getElementById('root'));

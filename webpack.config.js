@@ -13,10 +13,14 @@ module.exports = {
   },
   devServer: {
     port: '8080',
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
-  resolve:{
-    extensions: ['.js', '.json', '.jsx']
+  resolve: {
+    extensions: ['.js', '.json', '.jsx'],
+    alias: {
+      bootstrap: path.resolve(__dirname, 'node_modules')
+    }
   },
   module: {
     rules: [
@@ -25,13 +29,23 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(ttf|woff2|woff|eot|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }
       }
     ]
   }

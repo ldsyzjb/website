@@ -1,0 +1,8 @@
+[
+  { "sample": "1234@qq.com", "info": "（纯数字）", "state": true },
+  { "sample": "wang@126.com", "info": "（纯字母）", "state": true },
+  { "sample": "wang123@126.com", "info": "（数字、字母混合）", "state": true },
+  { "sample": "wang123@vip.163.com", "info": "（多级域名）", "state": true },
+  { "sample": "wang_email@outlook.com", "info": "（含下划线 _）", "state": true },
+  { "sample": "wang.email@gmail.com", "info": "（含英语句号 .）", "state": true }
+]
