@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { } from 'react-router'
 
 
 import Sidebar from './components/sidebar';
@@ -22,8 +23,13 @@ const routers = [
 const Main = (
   <Router>
     <Sidebar routers={routers} />
-    <Route path="/home" component={Home} />
-    <Route path="/test-regexp" component={TestRegExp} />
+    <div className="body">
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route path="/test-regexp" component={TestRegExp} />
+        <Redirect to="/home" />
+    </Switch>   
+    </div>
   </Router>
 )
 

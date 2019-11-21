@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $sidebar-width;
+  background: $color-bg-dark;
+  z-index: $index-middle;
+  
+  .links {
+    margin: 20px;
+    text-align: right;
+
+    >div {
+      margin: 10px;
+    }
+  
+    a {
+      color: $color-white;
+  
+      &:hover {
+        color: $color-gray;
+      }
+    }
+  }
+
+  .arrow {
+    color: $color-white;
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}

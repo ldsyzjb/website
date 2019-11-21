@@ -1,0 +1,8 @@
+@import './variable.scss';
+
+@import '../sidebar/index.scss';
+
+
+.body {
+    margin-left: $sidebar-width;
+}
