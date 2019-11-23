@@ -1,35 +1,45 @@
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: $sidebar-width;
-  background: $color-bg-dark;
-  z-index: $index-middle;
-  
-  .links {
-    margin: 20px;
-    text-align: right;
+    background: #343a40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    z-index: $index-middle;
+    transition: width 0.4s ease;
+    overflow: hidden;
 
-    >div {
-      margin: 10px;
+    &.active {
+        width: $sidebar-width;
     }
-  
-    a {
-      color: $color-white;
-  
-      &:hover {
-        color: $color-gray;
-      }
-    }
-  }
 
-  .arrow {
-    color: $color-white;
-    position: absolute;
-    right: 10px;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
+    .container {
+        width: $sidebar-width;
+    }
+
+    .links {
+        margin: 20px 0;
+        text-align: left;
+        color: white;
+
+        > div {
+            @include ellipsis;
+            margin: 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .arrow {
+        font-size: 20px;
+        color: $color-white;
+        position: absolute;
+        right: 8px;
+        bottom: 50%;
+        transform: translate(0, -50%);
+        cursor: pointer;
+    }
 }

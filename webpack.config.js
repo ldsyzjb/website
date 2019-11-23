@@ -14,7 +14,8 @@ module.exports = {
   devServer: {
     port: '8080',
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    open: true
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
